@@ -1,0 +1,94 @@
+/* ==UserStyle==
+@name           Abema.tvをキャプチャしやすくする
+@version        20241211.2245
+@description    動画にかぶさるコントロールバーやスキップ、次の動画などを非表示にしたり、画面の外に移動した。あといろいろ微調整。
+@license        MIT
+@author         tontoroRR
+@homepage       https://github.com/tontoroRR
+@updateURL      https://github.com/tontoroRR/css-for-stylus/abema.tv/easy_capture.user.css
+@namespace      tontoroRR/com.github
+@preprocessor	  stylus
+==/UerStyle== */
+
+    /* 動画中央に表示される一時停止/再生のアイコンを非表示 */
+    div.com-vod-VODScreen-player-feedback {
+        opacity: 0 !important;
+    }
+    /* コントロールバーの影を削除 */
+    div.com-vod-VODScreen__video-control-bg {
+        display: none !important;
+    }
+    /* プレーヤーの下に隙間を開ける */
+    div.com-vod-VODRecommendedContentsContainerView__player {
+        /* margin-bottom: 0px !important; */
+    }
+    /* タイトルを狭く */
+    div.com-video-EpisodePlayerSection__header-details {
+        width: 550px !important;
+    }
+    /* SNS連携ボタンの削除 */
+    div.com-video-EpisodePlayerSection__header-action-buttons {
+        display: none !important;
+    }
+    /* OPスキップボタンを非表示 */
+    div.com-vod-VODOpeningSkip {
+        display: none !Important;
+    }
+    /* 次動画ナビ関連 */
+    /* 1. コントロールバーの下にずらす */
+    div.com-vod-VODPlayerNextContentRecommendBase {
+        margin-bottom: -208px !important;
+    }
+    div.com-vod-VODPlayerNextContentRecommendBase__inner {
+        margin-right: 12px !important;
+        opacity: 1 !important;
+        width: 664px;
+        transform: translateX(0) !important;    
+    }
+    /* 2. 次動画ナビを狭く */
+    div.com-vod-VODPlayerNextContentRecommendBase {
+        width: 440px;
+    }
+    /* 3. ボタン領域を小さく */
+    div.com-vod-VODPlayerNextContentRecommendBase__button-wrapper {
+        width: 240px;
+        justify-content: flex-end;
+    }
+    /* 4. キャンセルボタンを小さく */
+    button.com-vod-VODPlayerNextContentRecommendBase__cancel-button {
+        width: 100px;
+        margin-right: 8px;
+    }
+    button.com-vod-VODPlayerNextContentRecommendBase__cancel-button:after {
+        width: 100px;
+        right: 360px;
+    }
+    /* 5. 次へボタンを狭く */
+    div.com-vod-VODPlayerNextContentRecommendBase__next {
+        width: 100px;
+    }
+    /* 6. 次動画のサムネを小さく */
+    div.com-vod-VODPlayerNextContentRecommendBase__thumbnail {
+        width: 160px;
+        height: 90px;
+    }
+    
+    /* コントロールバーをタイトルや次動画ナビの下にずらす */
+    div.com-vod-VideoControlBar__seekbar {
+        margin-top: 220px !important;
+        visibility: visible !important;
+        opacity: 1;
+    }
+    /* 詳細の開閉をコントロールバーの下にずらす */
+    div.com-vod-VODDetailsAccordion {
+        margin-top: 70px !important;
+    }
+    /* 詳細の下の不要な隙間を狭く */
+    .com-video-EpisodePlayerSection__header {
+        row-gap: 4px !important;
+        column-gap: 24px !important;
+    }
+    /* コントロールバーのフェードアウトを抑止*/
+    div.com-vod-VideoControlBar--fade-out {
+        opacity: 1 !important;
+    }
