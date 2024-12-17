@@ -9,11 +9,7 @@
 @namespace      tontoroRR/com.github
 @preprocessor	stylus
 ==/UserStyle== */
-@-moz-document domain("abema.tv") {
-	:root {
-		--player_width: 1280px;
-	}
-
+@-moz-document domain("abema.tv/video/episode") {
 	/* 動画中央に表示される一時停止/再生のアイコンを非表示 */
 	div.com-vod-VODScreen-player-feedback {
 		opacity: 0 !important;
@@ -55,10 +51,6 @@
 			margin-bottom: -18px;
 		}
 	}
-	1120-981/* プレーヤーの下に隙間を開ける */
-	div.com-vod-VODRecommendedContentsContainerView__player {
-		/* margin-bottom: 0px !important; */
-	}
 	/* タイトルを狭く */
 	div.com-video-EpisodePlayerSection__header-details {
 		width: 550px !important;
@@ -70,11 +62,11 @@
 	/* OPスキップボタンを非表示 */
 	div.com-vod-VODOpeningSkip {
 		display: none !Important;
+        width: 0px;
+        height: 0px;
 	}
-
 	/* 次動画ナビ関連 */
 	div {
-		/* <- ダミー階層 */
 		com-vod-VODPlayerNextContentRecommendBase/* 1. 動画の下にずらす */
 		div.com-vod-VODPlayerNextContentRecommendBase {
 			margin-bottom: -192px !important;
@@ -104,7 +96,7 @@
 		}
 		button.com-vod-VODPlayerNextContentRecommendBase__cancel-button:after {
 			width: 80px;
-			right: 340px;
+			right: 112px;
 			height: 36px;
 		}
 		/* 5. 次へボタンを小さく */
@@ -116,20 +108,19 @@
 			margin-top: 0px;
 			height: 36px;
 		}
-
 		/* 6. 次動画のサムネを小さく */
 		div.com-vod-VODPlayerNextContentRecommendBase__thumbnail {
-			width: 160px;
-			height: 90px;
+			width: 144px;
+			height: 81px;
 		}
 		div.com-m-Thumbnail {
-			width: 160px;
-			height: 90px;
+			width: 144px;
+			height: 81px;
 		}
 	}
 	/* 詳細の開閉をコントロールバーの下にずらす */
 	div.com-vod-VODDetailsAccordion {
-		margin-top: 80px !important;
+		mmargin-top: 80px !important;
 	}
 	/* 詳細の下の不要な隙間を狭く */
 	.com-video-EpisodePlayerSection__header {
@@ -138,7 +129,6 @@
 	}
 	/* タイトルなどの文字をやや小さく */
 	div {
-		/* <- ダミー階層 */
 		/* 1. 視聴中のタイトル */
 		span.com-video-EpisodeTitle__series-info {
 			font-size: 55%;
