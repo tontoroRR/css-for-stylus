@@ -1,15 +1,15 @@
 /* ==UserStyle==
 @name           Abema.tvをキャプチャーしやすくする
-@version        20241215.0043
+@version        20241218.0025
 @description    動画にかぶさるコントロールバーやスキップ、次の動画などを非表示にしたり、画面の外に移動した。あといろいろ微調整。
 @license        MIT
 @author         tontoroRR
 @homepageURL    https://github.com/tontoroRR
-@updateURL      https://github.com/tontoroRR/css-for-stylus/abema.tv/easy_capture.user.css
+@updateURL      https://github.com/tontoroRR/css-for-stylusa/abema.tv/easy_capture.user.css
 @namespace      tontoroRR/com.github
 @preprocessor	stylus
 ==/UserStyle== */
-@-moz-document domain("abema.tv/video/episode") {
+@-moz-document url-prefix("https://abema.tv/video/episode") {
 	/* 動画中央に表示される一時停止/再生のアイコンを非表示 */
 	div.com-vod-VODScreen-player-feedback {
 		opacity: 0 !important;
@@ -67,6 +67,7 @@
 	}
 	/* 次動画ナビ関連 */
 	div {
+		/* <- ダミー階層 */
 		com-vod-VODPlayerNextContentRecommendBase/* 1. 動画の下にずらす */
 		div.com-vod-VODPlayerNextContentRecommendBase {
 			margin-bottom: -192px !important;
@@ -129,6 +130,7 @@
 	}
 	/* タイトルなどの文字をやや小さく */
 	div {
+		/* <- ダミー階層 */
 		/* 1. 視聴中のタイトル */
 		span.com-video-EpisodeTitle__series-info {
 			font-size: 55%;
