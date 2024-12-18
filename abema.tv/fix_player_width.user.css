@@ -1,17 +1,15 @@
 /* ==UserStyle==
 @name           Abema.tvのプレーヤーのサイズを固定する
 @namespace      github.com/tontoroRR/css-for-stylus
-@homepageURL    https://github.com/tontoroRR
-@version        2024.12.18.2124
+@homepageURL    https://userstyles.world/style/19878/abema-tv
+@version        2024.12.18.2155
 @description    プレーヤー部分のサイズを固定する
-@license        MIT
 @author         tontoroRR
-@updateURL      https://github.com/tontoroRR/css-for-stylus/blob/main/abema.tv/fix_player_width.user.css
+@license        MIT
 @preprocessor   stylus
 
 @var   range    player-width "プレーヤーの横幅(px)"   [1280, 320, 1920, 320, "px"]   
 ==/UserStyle== */
-
 @-moz-document url-prefix("https://abema.tv/video/episode") {
     /* 動画幅を固定値（初期値 1280px）にする */
     div.com-vod-VODRecommendedContentsContainerView__player {
