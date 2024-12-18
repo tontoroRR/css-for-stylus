@@ -1,12 +1,12 @@
 /* ==UserStyle==
 @name           Abema.tvのプレーヤーを1280x720に固定する
-@version        20241218.0033
+@version        2024.12.18_0033
 @description    プレーヤー部分を1280x720に固定する
 @license        MIT
 @author         tontoroRR
 @homepageURL    https://github.com/tontoroRR
 @updateURL      https://github.com/tontoroRR/css-for-stylus/blob/main/abema.tv/fix_player_width.user.css
-@namespace      tontoroRR/com.github
+@namespace      https://github.com/tontoroRR
 @preprocessor	stylus
 ==/UserStyle== */
 

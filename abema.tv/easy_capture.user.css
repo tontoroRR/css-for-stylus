@@ -1,13 +1,13 @@
 /* ==UserStyle==
 @name           Abema.tvをキャプチャーしやすくする
-@version        20241218.0033
+@version        2024.12.18_0033
 @description    動画にかぶさるコントロールバーやスキップ、次の動画などを非表示にしたり、画面の外に移動した。あといろいろ微調整。
 @license        MIT
 @author         tontoroRR
 @homepageURL    https://github.com/tontoroRR
 @updateURL      https://github.com/tontoroRR/css-for-stylus/blob/main/abema.tv/easy_capture.user.css
-@namespace      tontoroRR/com.github
-@preprocessor	stylus
+@namespace      https://github.com/tontoroRR
+@preprocessor   stylus
 ==/UserStyle== */
 @-moz-document url-prefix("https://abema.tv/video/episode") {
 	/* 動画中央に表示される一時停止/再生のアイコンを非表示 */
