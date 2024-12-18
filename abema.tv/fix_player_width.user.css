@@ -1,23 +1,21 @@
 /* ==UserStyle==
-@name           Abema.tvのプレーヤーを1280x720に固定する
-@version        2024.12.18_0033
-@description    プレーヤー部分を1280x720に固定する
+@name           Abema.tvのプレーヤーのサイズを固定する
+@namespace      github.com/tontoroRR/css-for-stylus
+@homepageURL    https://github.com/tontoroRR
+@version        2024.12.18.2124
+@description    プレーヤー部分のサイズを固定する
 @license        MIT
 @author         tontoroRR
-@homepageURL    https://github.com/tontoroRR
 @updateURL      https://github.com/tontoroRR/css-for-stylus/blob/main/abema.tv/fix_player_width.user.css
-@namespace      https://github.com/tontoroRR
-@preprocessor	stylus
+@preprocessor   stylus
+
+@var   range    player-width "プレーヤーの横幅(px)"   [1280, 320, 1920, 320, "px"]   
 ==/UserStyle== */
 
 @-moz-document url-prefix("https://abema.tv/video/episode") {
-    /* 動画幅を1280pxにする */
-    div.com-vod-VODResponsiveMainContent {
-        width: 1340px !important;
+    /* 動画幅を固定値（初期値 1280px）にする */
+    div.com-vod-VODRecommendedContentsContainerView__player {
+        /* 望む画素数+60をwidthに入れる。幅を決めると高さは自動的に16:9に調製される */
+        width: player-width + 60px !important;
     }
-    /* 幅を望む画素数+60にする。高さは自動的に16:9に調製される */
-    /* 1920x1080 */
-    /* 1440x810 */
-    /* 1280x720 -> 1340*/
-    /* 960x540 -> 1020 */
 }
