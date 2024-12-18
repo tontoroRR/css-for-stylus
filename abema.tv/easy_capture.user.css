@@ -2,7 +2,7 @@
 @name           Abema.tvをキャプチャーしやすくする
 @namespace      github.com/tontoroRR/css-for-stylus
 @homepageURL    https://github.com/tontoroRR
-@version        2024.12.18.0033
+@version        2024.12.18.2129
 @description    動画にかぶさるコントロールバーやスキップ、次の動画などを非表示にしたり、画面の外に移動した。あといろいろ微調整。
 @author         tontoroRR
 @license        MIT
@@ -10,153 +10,151 @@
 @preprocessor   stylus
 ==/UserStyle== */
 @-moz-document url-prefix("https://abema.tv/video/episode") {
-	/* 動画中央に表示される一時停止/再生のアイコンを非表示 */
-	div.com-vod-VODScreen-player-feedback {
-		opacity: 0 !important;
-	}
-	/* コントロールバー関連 */
-	div {
-		/* 1. コントロールバーの影を削除 */
-		div.com-vod-VODScreen__video-control-bg {
-			display: none !important;
-		}
-		/* 2. コントロールバーを一番上に持ってくる */
-		div.com-vod-VideoControlBar {
-			position: fixed;
-			top: 0;
-			left: auto;
-			width: calc(100vw - 140px);
-			right: auto;
-		}
-		/* 3. コントロールバーを常に表示 */
-		div.com-vod-VideoControlBar__seekbar {
-			visibility: visible !important;
-			display: block;
-			opacity: 1;
-		}
-		/* 4. コントロールバーのフェードアウトを抑止*/
-		div.com-vod-VideoControlBar--fade-out {
-			opacity: 1 !important;
-		}
-		/* 5. シーク時のサムネを消去 */
-		div.com-playback-SeekBar__popover {
-			display: none;
-		}
-		/* 5. シーク時のサムネをバーに重ねて表示 */
-		div.com-playback-SeekBar__popover {
-			top: -20px;
-		}
-		/* 6. シーク時間をサムネ上に表示 */
-		img.com-playback-SeekBar__image {
-			margin-bottom: -18px;
-		}
-	}
-	/* タイトルを狭く */
-	div.com-video-EpisodePlayerSection__header-details {
-		width: 550px !important;
-	}
-	/* SNS連携ボタンの削除 */
-	div.com-video-EpisodePlayerSection__header-action-buttons {
-		display: none !important;
-	}
-	/* OPスキップボタンを非表示 */
-	div.com-vod-VODOpeningSkip {
-		display: none !Important;
+    /* 動画中央に表示される一時停止/再生のアイコンを非表示 */
+    div.com-vod-VODScreen-player-feedback {
+        opacity: 0 !important;
+    }
+    /* コントロールバー関連 */
+    div {
+        /* 1. コントロールバーの影を削除 */
+        div.com-vod-VODScreen__video-control-bg {
+            display: none !important;
+        }
+        /* 2. コントロールバーを一番上に持ってくる */
+        div.com-vod-VideoControlBar {
+            position: fixed;
+            top: 0;
+            left: auto;
+            width: calc(100vw - 140px);
+            right: auto;
+        }
+        /* 3. コントロールバーを常に表示 */
+        div.com-vod-VideoControlBar__seekbar {
+            visibility: visible !important;
+            display: block;
+            opacity: 1;
+        }
+        /* 4. コントロールバーのフェードアウトを抑止*/
+        div.com-vod-VideoControlBar--fade-out {
+            opacity: 1 !important;
+        }
+        /* 5. シーク時のサムネを消去 */
+        div.com-playback-SeekBar__popover {
+            display: none;
+        }
+        /* 5. シーク時のサムネをバーに重ねて表示 */
+        div.com-playback-SeekBar__popover {
+            top: -20px;
+        }
+        /* 6. シーク時間をサムネ上に表示 */
+        img.com-playback-SeekBar__image {
+            margin-bottom: -18px;
+        }
+    }
+    /* タイトルを狭く */
+    div.com-video-EpisodePlayerSection__header-details {
+        width: 550px !important;
+    }
+    /* SNS連携ボタンの削除 */
+    div.com-video-EpisodePlayerSection__header-action-buttons {
+        display: none !important;
+    }
+    /* OPスキップボタンを非表示 */
+    div.com-vod-VODOpeningSkip {
+        display: none !Important;
         width: 0px;
         height: 0px;
-	}
-	/* 次動画ナビ関連 */
-	div {
-		/* <- ダミー階層 */
-		com-vod-VODPlayerNextContentRecommendBase/* 1. 動画の下にずらす */
-		div.com-vod-VODPlayerNextContentRecommendBase {
-			margin-bottom: -192px !important;
-		}
-		div.com-vod-VODPlayerNextContentRecommendBase__inner {
-			margin-right: 12px !important;
-			opacity: 1 !important;
-			width: 420px;
-			transform: translateX(0) !important;
-		}
-		/* 2. 次動画ナビを狭く */
-		div.com-vod-VODPlayerNextContentRecommendBase {
-			width: 420px;
-		}
-		/* 3. ボタン領域を小さく */
-		div.com-vod-VODPlayerNextContentRecommendBase__button-wrapper {
-			width: 240px;
-			justify-content: flex-end;
-		}
-		/* 4. キャンセルボタンを小さく */
-		button.com-vod-VODPlayerNextContentRecommendBase__cancel-button {
-			width: 80px;
-			margin-right: 8px;
-			margin-top: -1px;
-			height: 36px;
-			font-size: 85%;
-		}
-		button.com-vod-VODPlayerNextContentRecommendBase__cancel-button:after {
-			width: 80px;
-			right: 112px;
-			height: 36px;
-		}
-		/* 5. 次へボタンを小さく */
-		div.com-vod-VODPlayerNextContentRecommendBase__next {
-			width: 80px;
-			height: 36px;
-		}
-		a.com-a-Button {
-			margin-top: 0px;
-			height: 36px;
-		}
-		/* 6. 次動画のサムネを小さく */
-		div.com-vod-VODPlayerNextContentRecommendBase__thumbnail {
-			width: 144px;
-			height: 81px;
-		}
-		div.com-m-Thumbnail {
-			width: 144px;
-			height: 81px;
-		}
-	}
-	/* 詳細の開閉をコントロールバーの下にずらす */
-	div.com-vod-VODDetailsAccordion {
-		mmargin-top: 80px !important;
-	}
-	/* 詳細の下の不要な隙間を狭く */
-	.com-video-EpisodePlayerSection__header {
-		row-gap: 4px !important;
-		column-gap: 24px !important;
-	}
-	/* タイトルなどの文字をやや小さく */
-	div {
-		/* <- ダミー階層 */
-		/* 1. 視聴中のタイトル */
-		span.com-video-EpisodeTitle__series-info {
-			font-size: 55%;
-		}
-		span.com-video-EpisodeTitle__episode-title {
-			font-size: 65%;
-			margin-top: 0.25em;
-		}
-		p.com-video-EpisodeTitleBlock__supplement {
-			font-size: 100%;
-			margin-top: 0.5em;
-		}
-		/* 次動画ナビのタイトル */
-		div.com-vod-VODPlayerNextContentRecommendBase__subtitle {
-			font-size: 80%;
-		}
-		div.com-vod-VODPlayerNextContentRecommendBase__title {
-			font-size: 95%;
-		}
-	}
-	/* 右サイドのおすすめ動画を非表示 */
-	div.com-vod-VODRecommendedContentsContainerView__player-aside-recommended {
-		display: none;
-	}
-	/* トップメニューを非表示 */
-	div.c-common-HeaderContainer-header {
-		display: none;
-	}
+    }
+    /* 次動画ナビ関連 */
+    div {
+        /* 1. 動画の下にずらす */
+        div.com-vod-VODPlayerNextContentRecommendBase {
+            margin-bottom: -192px !important;
+        }
+        div.com-vod-VODPlayerNextContentRecommendBase__inner {
+            margin-right: 12px !important;
+            opacity: 1 !important;
+            width: 420px;
+            transform: translateX(0) !important;
+        }
+        /* 2. 次動画ナビを狭く */
+        div.com-vod-VODPlayerNextContentRecommendBase {
+            width: 420px;
+        }
+        /* 3. ボタン領域を小さく */
+        div.com-vod-VODPlayerNextContentRecommendBase__button-wrapper {
+            width: 240px;
+            justify-content: flex-end;
+        }
+        /* 4. キャンセルボタンを小さく */
+        button.com-vod-VODPlayerNextContentRecommendBase__cancel-button {
+            width: 80px;
+            margin-right: 8px;
+            margin-top: -1px;
+            height: 36px;
+            font-size: 85%;
+        }
+        button.com-vod-VODPlayerNextContentRecommendBase__cancel-button:after {
+            width: 80px;
+            right: 112px;
+            height: 36px;
+        }
+        /* 5. 次へボタンを小さく */
+        div.com-vod-VODPlayerNextContentRecommendBase__next {
+            width: 80px;
+            height: 36px;
+        }
+        a.com-a-Button {
+            margin-top: 0px;
+            height: 36px;
+        }
+        /* 6. 次動画のサムネを小さく */
+        div.com-vod-VODPlayerNextContentRecommendBase__thumbnail {
+            width: 144px;
+            height: 81px;
+        }
+        div.com-m-Thumbnail {
+            width: 144px;
+            height: 81px;
+        }
+    }
+    /* 詳細の開閉をコントロールバーの下にずらす */
+    div.com-vod-VODDetailsAccordion {
+        mmargin-top: 80px !important;
+    }
+    /* 詳細の下の不要な隙間を狭く */
+    .com-video-EpisodePlayerSection__header {
+        row-gap: 4px !important;
+        column-gap: 24px !important;
+    }
+    /* タイトルなどの文字をやや小さく */
+    div {
+        /* 1. 視聴中のタイトル */
+        span.com-video-EpisodeTitle__series-info {
+            font-size: 55%;
+        }
+        span.com-video-EpisodeTitle__episode-title {
+            font-size: 65%;
+            margin-top: 0.25em;
+        }
+        p.com-video-EpisodeTitleBlock__supplement {
+            font-size: 100%;
+            margin-top: 0.5em;
+        }
+        /* 次動画ナビのタイトル */
+        div.com-vod-VODPlayerNextContentRecommendBase__subtitle {
+            font-size: 80%;
+        }
+        div.com-vod-VODPlayerNextContentRecommendBase__title {
+            font-size: 95%;
+        }
+    }
+    /* 右サイドのおすすめ動画を非表示 */
+    div.com-vod-VODRecommendedContentsContainerView__player-aside-recommended {
+        display: none;
+    }
+    /* トップメニューを非表示 */
+    div.c-common-HeaderContainer-header {
+        display: none;
+    }
 }
